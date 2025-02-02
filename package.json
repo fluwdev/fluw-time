@@ -2,18 +2,45 @@
   "name": "fluw-time",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluwdev/fluw-time"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fluwdev/fluw-time/issues"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc && tsup",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": [
+    "time",
+    "date",
+    "timestamp",
+    "javascript",
+    "typescript",
+    "fluwdev"
+  ],
+  "author": "Jesús Enrique Alcalà Rojas <jesusalcalarojas@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.13.0",
-    "typescript": "^5.7.3"
-  },
-  "dependencies": {
+    "globals": "^15.14.0",
+    "happy-dom": "^16.8.1",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
     "vitest": "^3.0.4"
   }
 }
