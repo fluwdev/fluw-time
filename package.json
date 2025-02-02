@@ -1,6 +1,6 @@
 {
   "name": "fluw-time",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A simple and lightweight library for working with time and date in JavaScript and TypeScript.",
   "files": [
     "dist"
