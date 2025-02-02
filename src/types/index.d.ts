@@ -16,3 +16,15 @@ export type TimeData = {
   nanoseconds: number // Fracción nanosegundos (0-999999)
   precision: PrecisionLevel
 }
+
+type FormatStyle = 'long' | 'short'
+
+export type FormatTimeOptions = {
+  /** Tipo de formato predefinido */
+  style?: FormatStyle
+  /**
+   * Patrón de formato a usar, en caso de definirse se utiliza en lugar del estilo predefinido.
+   * Ejemplo: 'YYYY-MM-DD HH:mm:ss.SSSSSS'
+   */
+  pattern?: string
+}
