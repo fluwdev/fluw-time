@@ -1,3 +1,5 @@
+import { TIME_UNITS } from './constanst'
+
 /**
  * Parsea una cadena de tiempo a milisegundos
  * @param timeString Cadena en formato [número][unidad] (ej: "1d", "2w")
@@ -13,16 +15,5 @@ export function parseTimeString(timeString: string): number {
   const value = parseInt(match[1])
   const unit = match[2].toLowerCase() as TimeUnit
 
-  const conversions: Record<TimeUnit, number> = {
-    ms: 1,
-    s: 1000,
-    m: 60 * 1000,
-    h: 60 * 60 * 1000,
-    d: 24 * 60 * 60 * 1000,
-    w: 7 * 24 * 60 * 60 * 1000,
-    M: 30 * 24 * 60 * 60 * 1000,
-    y: 365 * 24 * 60 * 60 * 1000,
-  }
-
-  return value * (conversions[unit] || 0)
+  return value * (TIME_UNITS[unit] || 0)
 }
