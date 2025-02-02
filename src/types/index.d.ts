@@ -1,3 +1,5 @@
+type PrecisionLevel = 0 | 3 | 6 | 9 // Precisión para mili, micro y nanosegundos
+
 export type TimeUnit =
   | 'years'
   | 'months'
@@ -9,18 +11,8 @@ export type TimeUnit =
   | 'microseconds'
   | 'nanoseconds'
 
-export type HumanUnit =
-  | 'now'
-  | 'seconds'
-  | 'minute'
-  | 'hour'
-  | 'day'
-  | 'week'
-  | 'month'
-  | 'year'
-
-interface FluwTimeOptions {
-  locale?: string
-  strict?: boolean
-  realTimeUpdate?: number
+export type TimeData = {
+  timestamp: number // Tiempo en milisegundos
+  nanoseconds: number // Fracción nanosegundos (0-999999)
+  precision: PrecisionLevel
 }
